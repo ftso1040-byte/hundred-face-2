@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百人の顔 | 未来へ贈るメッセージ 100の人生・100の哲学</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: {
+                        base: '#FAFAFA',
+                        surface: '#FFFFFF',
+                        textMain: '#1A1A1A',
+                        textMuted: '#475569',
+                        accent: '#0F4C81',
+                        accentDark: '#082F4F',
+                        borderLight: '#E5E7EB'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body { background-color: #FAFAFA; color: #1A1A1A; overflow-x: hidden; font-feature-settings: "palt" 1; }
+        .text-unit { display: inline-block; white-space: nowrap; }
+        .text-fluid-h1 { font-size: clamp(2.5rem, 5.5vw + 1rem, 6rem); line-height: 1.2; letter-spacing: 0.05em; }
+        .text-fluid-h2 { font-size: clamp(1.8rem, 3.5vw + 1rem, 3.5rem); line-height: 1.4; letter-spacing: 0.05em; }
+        .text-fluid-p { font-size: clamp(0.95rem, 1vw + 0.5rem, 1.125rem); line-height: 2.2; }
+        .parallax-wrapper { overflow: hidden; position: relative; }
+        .parallax-img { width: 100%; height: 120%; object-fit: cover; position: absolute; top: -10%; }
+        .char { display: inline-block; opacity: 0; transform: translateY(100%); }
+        
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            50.1% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+        .animate-scroll-line { animation: scrollLine 2.5s infinite ease-in-out; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accentDark selection:text-white">
+
+    <!-- ナビゲーション -->
+    <nav class="fixed top-0 left-0 w-full z-50 p-4 md:px-12 md:py-6 flex justify-between items-center bg-base/90 backdrop-blur-md border-b border-borderLight transition-transform duration-300" id="navbar">
+        <div class="flex flex-col">
+            <div class="font-serif text-lg md:text-xl tracking-[0.1em] font-semibold text-textMain">百人の顔</div>
+            <div class="font-sans text-[9px] md:text-xs tracking-[0.1em] text-textMuted font-bold mt-1 uppercase">Message to the Future</div>
+        </div>
+        <a href="#contact" class="bg-accentDark text-white font-sans text-xs md:text-sm font-bold tracking-widest px-6 py-3 rounded-full hover:bg-accent transition-colors duration-300 shadow-sm">
+            お問い合わせ
+        </a>
+    </nav>
+
+    <!-- ヒーローセクション：【切り口1】社会的価値・資産 -->
+    <header class="relative w-full h-screen flex flex-col justify-center items-center px-[8vw] bg-base overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none parallax-wrapper">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" class="parallax-img opacity-20 grayscale" alt="[Image of Architecture]">
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="text-center z-10 w-full max-w-6xl pb-40 md:pb-32">
+            <p class="font-sans text-accent tracking-[0.3em] mb-8 uppercase text-xs font-semibold gs-reveal opacity-0">Future Archive Project</p>
+            <h1 class="font-serif text-fluid-h1 font-medium tracking-tight mb-8 hero-title text-accentDark">
+                あなたの人生を、<br>日本の資産へ。
+            </h1>
+            <div class="w-12 h-[1px] bg-accentDark mx-auto my-8 gs-reveal opacity-0"></div>
+            <p class="font-serif text-lg md:text-xl text-textMuted gs-reveal opacity-0 tracking-[0.2em] font-bold">100人の経営者が紡ぐ、次世代への哲学。</p>
+        </div>
+        
+        <div class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 gs-reveal pointer-events-none">
+            <span class="font-sans text-[10px] tracking-[0.3em] text-textMuted mb-4 font-bold">SCROLL</span>
+            <div class="w-[1px] h-16 bg-borderLight overflow-hidden relative">
+                <div class="absolute top-0 left-0 w-full h-full bg-textMain origin-top animate-scroll-line"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. 企画趣旨：【切り口4】共感・本質（エモーショナル） -->
+    <section class="py-[12vh] px-[8vw] bg-surface border-b border-borderLight">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+            <div class="w-full lg:w-5/12 space-y-12">
+                <div class="gs-fade-up">
+                    <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase flex items-center gap-4 mb-6">01. Concept</span>
+                    <h2 class="font-serif text-fluid-h2 leading-tight font-bold text-accentDark">
+                        <span class="text-unit">経営とは、</span><br><span class="text-unit">哲学を語り継ぐこと。</span>
+                    </h2>
+                </div>
+                <div class="font-sans text-fluid-p text-textMuted space-y-8 font-medium gs-fade-up">
+                    <p>専門用語はいらない。子どもたちが一人で読み切れる、いちばん優しい経営の教科書。失敗をどう乗り越えたか。迷ったとき、何を信じたか。あなたの「心の根っこ」にある想いを、未来へ手渡すプロジェクトです。</p>
+                    <p>成功体験だけではない。葛藤、決断、そして信念。あなたの歩みを「社会的記録」として編纂し、100年先まで届く一冊へ昇華させます。</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-7/12 h-[50vh] lg:h-[70vh] parallax-wrapper shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=1500&auto=format&fit=crop" class="parallax-img grayscale contrast-125" alt="[Image of Philosophy]">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 冊子概要 -->
+    <section class="py-[12vh] px-[8vw] bg-base">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 gs-fade-up flex flex-col md:flex-row justify-between items-start md:items-end">
+                <div>
+                    <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase mb-6 block">02. Overview</span>
+                    <h2 class="font-serif text-fluid-h2 font-bold text-accentDark">小学生が一人でも<br>読み切れることを最優先に。</h2>
+                </div>
+                <div class="font-serif text-8xl text-borderLight opacity-50 font-light select-none hidden md:block">100 Faces</div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <div class="space-y-16">
+                    <div class="gs-fade-up">
+                        <h3 class="font-serif text-2xl text-accentDark font-bold border-b border-borderLight pb-4 mb-8">基本仕様</h3>
+                        <ul class="space-y-4 font-sans text-textMain font-medium">
+                            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 mt-2"></span>想定読者：小学校高学年（5・6年生）～大人</li>
+                            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 mt-2"></span>掲載人数：経営者100名（限定）</li>
+                            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 mt-2"></span>判型：A4判 ／ オールカラー ／ 1名につき 2ページ</li>
+                        </ul>
+                    </div>
+                    <div class="gs-fade-up">
+                        <h3 class="font-serif text-2xl text-accentDark font-bold border-b border-borderLight pb-4 mb-8">主な掲載内容</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white border border-borderLight text-textMain rounded shadow-sm text-sm">子どもの頃に大切にしていたこと</span>
+                            <span class="px-4 py-2 bg-white border border-borderLight text-textMain rounded shadow-sm text-sm">失敗した経験と、そのとき考えたこと</span>
+                            <span class="px-4 py-2 bg-white border border-borderLight text-textMain rounded shadow-sm text-sm">仕事で迷ったときの判断のしかた</span>
+                            <span class="px-4 py-2 bg-white border border-borderLight text-textMain rounded shadow-sm text-sm font-bold">今も大切にしている考え方</span>
+                            <span class="px-4 py-2 bg-white border border-borderLight text-textMain rounded shadow-sm text-sm">子どもたちへのメッセージ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="parallax-wrapper shadow-xl bg-gray-200 aspect-video lg:aspect-auto">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop" class="parallax-img grayscale" alt="[Image of Mockup]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 三つの価値：【案2】恩返し ＋ 【案3】限定感 -->
+    <section class="py-[12vh] px-[8vw] bg-surface border-y border-borderLight">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 gs-fade-up">
+                <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase mb-6 block">03. Values</span>
+                <h2 class="font-serif text-fluid-h2 text-accentDark font-bold">本誌に掲載される3つの価値</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                    <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">01</div>
+                    <h3 class="font-serif text-xl text-accentDark font-bold mb-6">日本を形づくる<br>「百人の顔」</h3>
+                    <p class="text-textMain leading-loose text-sm font-medium">100名限定の選ばれしリーダーとして、その思想とポートレートを美しく可視化。採用、ブランディング、理念浸透に。長期的に活用できる究極のストーリー型資産をここに。</p>
+                </div>
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                    <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">02</div>
+                    <h3 class="font-serif text-xl text-accentDark font-bold mb-6">出身小学校への寄贈による<br>社会的意義</h3>
+                    <p class="text-textMain leading-loose text-sm font-medium mb-6">母校へ掲載誌を100冊**寄付**します。原点となる学び舎への還元であり、子どもたちに身近なロールモデルを提示する、教育・地域貢献としてのストーリーを創出します。</p>
+                    <p class="text-[10px] text-textMuted leading-relaxed">※寄贈名義：経営者様ご本人<br>※寄贈先：原則として出身小学校（ご希望により変更可）</p>
+                </div>
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                    <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">03</div>
+                    <h3 class="font-serif text-xl text-accentDark font-bold mb-6">次世代の挑戦を支える<br>「未来の地図」</h3>
+                    <p class="text-textMain leading-loose text-sm font-medium">教室で夢を描いていたあの頃の自分に、今のあなたなら何を伝えますか？あなたの哲学が、後輩たちの挑戦を支える灯火になります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 協賛内容と金額 -->
+    <section class="py-[12vh] px-[8vw] bg-base">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20 gs-fade-up">
+                <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase mb-6 block">04. Sponsorship</span>
+                <h2 class="font-serif text-fluid-h2 text-accentDark font-bold">価値創出型の協賛プラン</h2>
+            </div>
+
+            <div class="bg-white border border-borderLight shadow-lg rounded-sm overflow-hidden gs-fade-up">
+                <div class="p-8 md:p-16 border-b border-borderLight flex flex-col md:flex-row justify-between items-center bg-accentDark text-white">
+                    <div class="mb-8 md:mb-0 text-center md:text-left">
+                        <h3 class="font-serif text-3xl font-bold mb-2">協賛金額</h3>
+                        <p class="opacity-70 text-sm">2ページ掲載・1名様につき</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="text-5xl font-serif font-bold">600,000<small class="text-xl ml-2 font-sans font-normal opacity-80">円(税込)</small></span>
+                    </div>
+                </div>
+
+                <div class="p-8 md:p-12 bg-accent/5">
+                    <div class="border-2 border-accentDark p-6 md:p-8 bg-white text-center md:text-left relative">
+                        <h4 class="font-bold text-accentDark text-lg mb-2">契約時一括お支払いの場合</h4>
+                        <p class="text-4xl font-serif font-bold text-accentDark mb-4">350,000<small class="text-lg ml-1 font-sans font-normal">円(税込)</small></p>
+                        <p class="text-sm font-bold text-accent">※一括払いの場合、取材・制作スケジュールを優先的に確保いたします。</p>
+                    </div>
+                </div>
+
+                <div class="p-8 md:p-16 grid md:grid-cols-2 gap-16">
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-accentDark border-l-4 border-accent pl-4">協賛内容</h4>
+                        <ul class="text-textMain text-sm space-y-4 font-medium leading-loose">
+                            <li>・冊子への掲載（2ページ構成）</li>
+                            <li>・ポートレート撮影 ／ 原稿執筆（1,500字）</li>
+                            <li>・アートディレクション ／ 誌面デザイン</li>
+                            <li>・掲載誌の進呈 ／ <span class="font-bold">母校へ100冊寄付</span></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-accentDark border-l-4 border-accent pl-4">分割お支払い例</h4>
+                        <table class="w-full text-sm font-medium">
+                            <tr class="border-b border-borderLight"><td class="py-3">契約時</td><td class="py-3 text-right">200,000円</td></tr>
+                            <tr class="border-b border-borderLight"><td class="py-3">取材時</td><td class="py-3 text-right">200,000円</td></tr>
+                            <tr><td class="py-3">納品時</td><td class="py-3 text-right">200,000円</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer id="contact" class="py-[15vh] px-[8vw] bg-textMain text-center text-white relative">
+        <div class="max-w-4xl mx-auto gs-fade-up">
+            <h2 class="font-serif text-4xl md:text-6xl mb-16 leading-tight font-light">
+                あなたの哲学を、<br><span class="italic opacity-80">未来の資産に。</span>
+            </h2>
+            <a href="mailto:shiozawa@actilus.co.jp" class="inline-block border border-white px-12 py-6 rounded-full font-serif text-lg hover:bg-white hover:text-textMain transition-all duration-500 mb-20 font-bold">
+                お問い合わせ・お申し込み
+            </a>
+            <div class="text-xs md:text-sm text-white/50 space-y-4 pt-16 border-t border-white/10 font-sans">
+                <p class="font-bold text-white text-base">NPO法人先端医療をささえる会</p>
+                <p>〒104-0061 東京都中央区銀座6丁目6-1 銀座風月堂ビル5F</p>
+                <p>TEL: 03-3569-6700 ／ 担当：塩澤</p>
+                <p class="opacity-50 mt-12">&copy; NPO法人先端医療をささえる会</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // Hero Animation
+        const heroTitle = document.querySelector('.hero-title');
+        const text = heroTitle.innerHTML;
+        heroTitle.innerHTML = text.split(/<br\s*\/?>/).map(line => line.split('').map(char => char.trim()==='' ? char : `<span class="char">${char}</span>`).join('')).join('<br>');
+
+        gsap.timeline({delay: 0.5})
+            .to('.hero-title .char', { y: 0, opacity: 1, stagger: 0.05, duration: 1, ease: "power4.out" })
+            .to('.gs-reveal', { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.out" }, "-=0.5");
+
+        // Fade Up Elements
+        gsap.utils.toArray('.gs-fade-up').forEach(el => {
+            gsap.from(el, { scrollTrigger: { trigger: el, start: "top 90%" }, y: 40, opacity: 0, duration: 1.2, ease: "power2.out" });
+        });
+
+        // Cards Stagger
+        gsap.from('.gs-card', { scrollTrigger: { trigger: '.gs-card', start: "top 85%" }, y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
+
+        // Parallax
+        gsap.utils.toArray('.parallax-wrapper').forEach(wrapper => {
+            gsap.to(wrapper.querySelector('.parallax-img'), { y: '15%', ease: "none", scrollTrigger: { trigger: wrapper, start: "top bottom", end: "bottom top", scrub: true }});
+        });
+
+        // Navbar Control
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const navbar = document.getElementById('navbar');
+            if (currentScroll > 100 && currentScroll > lastScroll) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth Anchor Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
