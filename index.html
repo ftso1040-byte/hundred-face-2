@@ -38,7 +38,7 @@
     <style>
         body { background-color: #FAFAFA; color: #1A1A1A; overflow-x: hidden; font-feature-settings: "palt" 1; }
         .text-unit { display: inline-block; white-space: nowrap; }
-        .text-fluid-h1 { font-size: clamp(2.5rem, 5.5vw + 1rem, 6rem); line-height: 1.2; letter-spacing: 0.05em; }
+        .text-fluid-h1 { font-size: clamp(1.8rem, 4vw + 1rem, 4rem); line-height: 1.4; letter-spacing: 0.05em; }
         .text-fluid-h2 { font-size: clamp(1.8rem, 3.5vw + 1rem, 3.5rem); line-height: 1.4; letter-spacing: 0.05em; }
         .text-fluid-p { font-size: clamp(0.95rem, 1vw + 0.5rem, 1.125rem); line-height: 2.2; }
         .parallax-wrapper { overflow: hidden; position: relative; }
@@ -68,24 +68,32 @@
     </nav>
 
     <!-- ヒーローセクション：【切り口1】社会的価値・資産 -->
-    <header class="relative w-full h-screen flex flex-col justify-center items-center px-[8vw] bg-base overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none parallax-wrapper">
-            <img src="スクリーンショット 2026-03-19 172649.png" class="parallax-img opacity-20 grayscale" alt="[Image of Architecture]">
-            <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent to-transparent"></div>
+    <header class="relative w-full min-h-screen flex flex-col justify-center items-center px-[8vw] bg-base overflow-hidden pt-32 pb-24">
+        
+        <div class="text-center z-10 w-full max-w-6xl flex flex-col items-center">
+            <p class="font-sans text-accent tracking-[0.3em] mb-6 md:mb-8 uppercase text-xs font-semibold gs-reveal opacity-0">Future Archive Project</p>
+            
+            <!-- メインコピー -->
+            <h1 class="font-serif text-fluid-h1 font-medium tracking-tight mb-8 hero-title text-accentDark">あなたの人生を、<br>日本の資産へ。</h1>
+            
+            <!-- サブコピー（問いかけ） -->
+            <p class="font-serif text-xl md:text-3xl text-accentDark font-medium leading-loose mb-6 gs-reveal opacity-0 tracking-wide">
+                あなたの人生と哲学を、<br>未来の子供たちの教育に、<br>役立たせてもらえませんか？
+            </p>
+
+            <div class="w-12 h-[1px] bg-accentDark mx-auto my-6 gs-reveal opacity-0"></div>
+            
+            <p class="font-serif text-base md:text-xl text-textMuted gs-reveal opacity-0 tracking-[0.2em] font-bold mb-12">100人の経営者が紡ぐ、次世代への哲学。</p>
+
+            <!-- 百人の顔 表紙画像 -->
+            <div class="gs-reveal opacity-0 w-full max-w-[260px] md:max-w-xs lg:max-w-sm relative mt-4">
+                <img src="スクリーンショット 2026-03-19 172649.png" alt="[百人の顔の表紙]" class="w-full h-auto object-cover shadow-2xl border border-borderLight/50 rounded-sm">
+            </div>
         </div>
         
-        <div class="text-center z-10 w-full max-w-6xl pb-40 md:pb-32">
-            <p class="font-sans text-accent tracking-[0.3em] mb-8 uppercase text-xs font-semibold gs-reveal opacity-0">Future Archive Project</p>
-            <h1 class="font-serif text-fluid-h1 font-medium tracking-tight mb-8 hero-title text-accentDark">
-                あなたの人生を、<br>日本の資産へ。
-            </h1>
-            <div class="w-12 h-[1px] bg-accentDark mx-auto my-8 gs-reveal opacity-0"></div>
-            <p class="font-serif text-lg md:text-xl text-textMuted gs-reveal opacity-0 tracking-[0.2em] font-bold">100人の経営者が紡ぐ、次世代への哲学。</p>
-        </div>
-        
-        <div class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 gs-reveal pointer-events-none">
+        <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 gs-reveal pointer-events-none">
             <span class="font-sans text-[10px] tracking-[0.3em] text-textMuted mb-4 font-bold">SCROLL</span>
-            <div class="w-[1px] h-16 bg-borderLight overflow-hidden relative">
+            <div class="w-[1px] h-12 md:h-16 bg-borderLight overflow-hidden relative">
                 <div class="absolute top-0 left-0 w-full h-full bg-textMain origin-top animate-scroll-line"></div>
             </div>
         </div>
@@ -308,8 +316,10 @@
         gsap.registerPlugin(ScrollTrigger);
         // Hero Animation
         const heroTitle = document.querySelector('.hero-title');
-        const text = heroTitle.innerHTML;
-        heroTitle.innerHTML = text.split(/<br\s*\/?>/).map(line => line.split('').map(char => char.trim()==='' ? char : `<span class="char">${char}</span>`).join('')).join('<br>');
+        const lines = heroTitle.innerHTML.split(/<br\s*\/?>/i);
+        heroTitle.innerHTML = lines.map(line => {
+            return line.trim().split('').map(char => `<span class="char">${char}</span>`).join('');
+        }).join('<br>');
 
         gsap.timeline({delay: 0.5})
             .to('.hero-title .char', { y: 0, opacity: 1, stagger: 0.05, duration: 1, ease: "power4.out" })
