@@ -39,6 +39,23 @@
         /* 全体の禁則処理を強化 */
         body { background-color: #FAFAFA; color: #1A1A1A; overflow-x: hidden; font-feature-settings: "palt" 1; line-break: strict; }
         
+        /* 文脈に応じた自動改行（モダンブラウザ対応） */
+        .phrase-wrap {
+            word-break: auto-phrase;
+            overflow-wrap: anywhere;
+        }
+
+        /* 単語や助詞の泣き別れを防ぐクラス */
+        .inline-phrase {
+            display: inline-block;
+            white-space: normal;
+        }
+
+        /* 見出しのバランス調整 */
+        .text-balance {
+            text-wrap: balance;
+        }
+
         /* スマホで1行に収まるように最小フォントサイズを調整 */
         .text-fluid-h1 { font-size: clamp(1.4rem, 4.5vw + 0.5rem, 4rem); line-height: 1.5; letter-spacing: 0.05em; }
         .text-fluid-h2 { font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem); line-height: 1.4; letter-spacing: 0.05em; }
@@ -87,7 +104,7 @@
             <p class="font-sans text-accent tracking-[0.3em] mb-6 md:mb-8 uppercase text-xs font-semibold gs-reveal opacity-0">Future Archive Project</p>
             
             <!-- メインコピー -->
-            <h1 class="font-serif text-fluid-h1 font-medium tracking-tight mb-8 hero-title text-accentDark">あなたの人生と哲学を、<br>未来の子供たちの教育に、<br>役立たせてもらえませんか？</h1>
+            <h1 class="font-serif text-fluid-h1 font-medium tracking-tight mb-8 hero-title text-accentDark text-balance">あなたの人生と哲学を、<br>未来の子供たちの教育に、<br>役立たせてもらえませんか？</h1>
 
             <div class="w-12 h-[1px] bg-accentDark mx-auto my-6 gs-reveal opacity-0"></div>
             
@@ -109,20 +126,20 @@
 
     <!-- 【新設】メッセージセクション -->
     <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-12 opacity-90">
-                嘗ては二宮尊徳、<br>
-                今日では大谷翔平。<br>
-                また、マスコミのスターが、<br>
-                教科書にのっていました。
+                <span class="inline-phrase">嘗ては二宮尊徳、</span><br>
+                <span class="inline-phrase">今日では大谷翔平。</span><br>
+                <span class="inline-phrase">また、マスコミのスターが、</span><br>
+                <span class="inline-phrase">教科書にのっていました。</span>
             </p>
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-16 opacity-90">
-                しかし、日本の今日を支えているのは、<br>
-                そんな一人や二人のスターではなく、<br>
-                あなたのような中小・零細企業の経営者の方々なのです。
+                <span class="inline-phrase">しかし、日本の今日を</span><span class="inline-phrase">支えているのは、</span><br>
+                <span class="inline-phrase">そんな一人や二人の</span><span class="inline-phrase">スターではなく、</span><br>
+                <span class="inline-phrase">あなたのような中小・</span><span class="inline-phrase">零細企業の</span><span class="inline-phrase">経営者の方々なのです。</span>
             </p>
             <div class="w-12 h-[1px] bg-white/30 mx-auto my-12"></div>
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16">
+            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-balance">
                 だから、あなたこそが、<br>
                 青少年の教材になって欲しいのです。
             </p>
@@ -143,30 +160,30 @@
 
     <!-- 【新設】メッセージセクション2（3ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up">
-            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 text-balance">
                 嘗て、我が国は、<br class="md:hidden">
-                家電や、パソコン、<br class="md:hidden">
-                スマートフォンなど、<br>
-                世界に冠たる、<br class="md:hidden">
-                物作り大国でした。
+                <span class="inline-phrase">家電や、パソコン、</span><br class="md:hidden">
+                <span class="inline-phrase">スマートフォンなど、</span><br>
+                <span class="inline-phrase">世界に冠たる、</span><br class="md:hidden">
+                <span class="inline-phrase">物作り大国でした。</span>
             </p>
             <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
-            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20">
-                それが、いつの間にか、<br class="md:hidden">
-                韓国や中国の台頭で、<br>
-                失われてしまったのです。
+            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20 text-balance">
+                <span class="inline-phrase">それが、いつの間にか、</span><br class="md:hidden">
+                <span class="inline-phrase">韓国や中国の台頭で、</span><br>
+                <span class="inline-phrase">失われてしまったのです。</span>
             </p>
             
-            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 mt-8">
-                そして、嘗て、日本は、<br>
-                世界一平和で<br class="md:hidden">安全な国でした。
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 mt-8 text-balance">
+                <span class="inline-phrase">そして、嘗て、日本は、</span><br>
+                <span class="inline-phrase">世界一平和で</span><br class="md:hidden"><span class="inline-phrase">安全な国でした。</span>
             </p>
             <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
-            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20">
-                それが、いつの間にか、<br>
-                詐欺師と強盗の蔓延る国に<br class="md:hidden">
-                なってしまったのです。
+            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20 text-balance">
+                <span class="inline-phrase">それが、いつの間にか、</span><br>
+                <span class="inline-phrase">詐欺師と強盗の蔓延る国に</span><br class="md:hidden">
+                <span class="inline-phrase">なってしまったのです。</span>
             </p>
 
             <!-- 追加：家電と新聞記事の画像スペース -->
@@ -185,59 +202,60 @@
 
     <!-- 【新設】メッセージセクション3（4ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up">
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-white/90">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
+            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-white/90 text-balance">
                 何故なのでしょうか？
             </p>
             
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-16 opacity-90">
-                鎌倉時代にはじまった武士道、<br>
-                戦国時代にはじまった茶道、<br>
-                江戸時代に、全国津々浦々まで広がった寺子屋が、<br>
-                士農工商・男女の区別なく、世界有数の識字率の高さと、和を重んじ、道を追求する、また、物の哀れさを理解する日本人らしさを育てたのです。
+                <span class="inline-phrase">鎌倉時代にはじまった武士道、</span><br>
+                <span class="inline-phrase">戦国時代にはじまった茶道、</span><br>
+                <span class="inline-phrase">江戸時代に、全国津々浦々まで</span><span class="inline-phrase">広がった寺子屋が、</span><br>
+                <span class="inline-phrase">士農工商・男女の区別なく、</span><span class="inline-phrase">世界有数の識字率の高さと、</span><br>
+                <span class="inline-phrase">和を重んじ、道を追求する、また、</span><span class="inline-phrase">物の哀れさを理解する</span><br class="md:hidden"><span class="inline-phrase">日本人らしさを育てたのです。</span>
             </p>
             
             <div class="w-12 h-[1px] bg-white/30 mx-auto my-12"></div>
             
-            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold">
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold text-balance">
                 だから、世界一の<br class="md:hidden">平和と安全な国が出来たのです。
             </p>
 
             <!-- 追加：お茶の画像 -->
             <div class="max-w-2xl mx-auto mt-16 aspect-video bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
-                <img src="Gemini_Generated_Image_6c5d6l6c5d6l6c5d.png" alt="[お茶の画像]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                <img src="https://images.unsplash.com/photo-1626202391629-9e320f781bc6?q=80&w=1200&auto=format&fit=crop" alt="[お茶の画像]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
         </div>
     </section>
 
     <!-- 【新設】メッセージセクション4（5ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-16 text-textMuted">
-                ところが、それらの日本人らしさが、<br>
-                日本を強くしたと考える<br class="md:hidden">アメリカの戦後の占領政策により、<br>
-                日本人の教育政策を、<br class="md:hidden">滅茶苦茶にこわされてしまい、<br>
-                身勝手で、自分のことしか考えない、<br class="md:hidden">ぐうたらな今の日本人を<br class="md:hidden">つくられてしまったのです。
+                <span class="inline-phrase">ところが、それらの日本人らしさが、</span><br>
+                <span class="inline-phrase">日本を強くしたと考える</span><br class="md:hidden"><span class="inline-phrase">アメリカの戦後の占領政策により、</span><br>
+                <span class="inline-phrase">日本人の教育政策を、</span><br class="md:hidden"><span class="inline-phrase">滅茶苦茶にこわされてしまい、</span><br>
+                <span class="inline-phrase">身勝手で、自分のことしか考えない、</span><br class="md:hidden"><span class="inline-phrase">ぐうたらな今の日本人を</span><br class="md:hidden"><span class="inline-phrase">つくられてしまったのです。</span>
             </p>
 
             <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
             
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold">
+            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold text-balance">
                 だから、いまこそ、<br>
                 我が国の教育政策を<br class="md:hidden">代えなくてはならないのです。
             </p>
 
             <!-- 追加：マッカーサーの画像スペース -->
             <div class="max-w-md mx-auto mt-16 aspect-[3/4] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
-                <img src="スクリーンショット 2026-04-04 174608.png" alt="[マッカーサーの画像]" class="w-full h-full object-cover grayscale contrast-125">
+                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop" alt="[マッカーサーの画像]" class="w-full h-full object-cover grayscale contrast-125">
             </div>
         </div>
     </section>
 
     <!-- 【新設】メッセージセクション5（6ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up">
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
+            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-balance">
                 「百人の顔」プロジェクトは、<br class="md:hidden">広告ではありません。<br>
                 従って、広告掲載料は<br class="md:hidden">頂きません。
             </p>
@@ -245,23 +263,23 @@
             <div class="w-12 h-[1px] bg-white/30 mx-auto my-12"></div>
             
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium opacity-90 mb-20">
-                仮に、広告料を頂いても、<br class="md:hidden">掲載することは、できません。<br><br>
-                「百人の顔」プロジェクトは、<br class="md:hidden">当プロジェクトの発案者であり、<br>
-                弊社代表取締役 林屋克三郎が、<br>
-                直接、お一人お一人から<br class="md:hidden">インタビューをさせて頂き、<br>
-                林屋から、「百人の顔」への<br class="md:hidden">掲載をお願いした方だけに、<br>
-                掲載をお願いするものです。
+                <span class="inline-phrase">仮に、広告料を頂いても、</span><br class="md:hidden"><span class="inline-phrase">掲載することは、できません。</span><br><br>
+                <span class="inline-phrase">「百人の顔」プロジェクトは、</span><br class="md:hidden"><span class="inline-phrase">当プロジェクトの発案者であり、</span><br>
+                <span class="inline-phrase">弊社代表取締役 林屋克三郎が、</span><br>
+                <span class="inline-phrase">直接、お一人お一人から</span><br class="md:hidden"><span class="inline-phrase">インタビューをさせて頂き、</span><br>
+                <span class="inline-phrase">林屋から、「百人の顔」への</span><br class="md:hidden"><span class="inline-phrase">掲載をお願いした方だけに、</span><br>
+                <span class="inline-phrase">掲載をお願いするものです。</span>
             </p>
 
             <!-- 追加：人物画像スペース -->
             <div class="max-w-xs mx-auto mt-12 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
-                <img src="スクリーンショット 2026-04-04 174909.png" alt="[林屋克三郎氏の画像]" class="w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop" alt="[林屋克三郎氏の画像]" class="w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
 
             <!-- 追加：林屋克三郎の略歴 -->
             <div class="mt-24 text-left max-w-3xl mx-auto bg-white/5 p-8 md:p-12 rounded-sm border border-white/20 shadow-lg relative">
                 <div class="absolute top-0 left-0 w-1 h-full bg-white/50"></div>
-                <h3 class="font-serif text-2xl md:text-3xl font-bold mb-10 text-center tracking-widest border-b border-white/20 pb-6">林屋克三郎の略歴</h3>
+                <h3 class="font-serif text-2xl md:text-3xl font-bold mb-10 text-center tracking-widest border-b border-white/20 pb-6 text-balance">林屋克三郎の略歴</h3>
                 
                 <div class="space-y-10 font-sans text-sm md:text-base leading-loose text-white/90">
                     <div>
@@ -271,17 +289,17 @@
                     
                     <div>
                         <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">父親について</p>
-                        <p class="mt-2">我が国に、鉄鋼業を創った鉄鋼王、東京鋼材（後に、三菱の岩崎小弥太と組んで三菱鋼材）の創業者。文学博士。<br>敗戦時、マッカーサーが、天皇制存続の根拠となった「天皇制の歴史的根拠」の著者。<br>また、戦後、敗戦国となり、海外から、傷病兵が帰国してきた時、国が何の保証も出来なかった時、三笠宮を名誉総裁にして、友愛十字会を設立、私財で、傷病兵の救済にあたる。昭和27年没。</p>
+                        <p class="mt-2 phrase-wrap">我が国に、鉄鋼業を創った鉄鋼王、東京鋼材（後に、三菱の岩崎小弥太と組んで三菱鋼材）の創業者。文学博士。<br>敗戦時、マッカーサーが、天皇制存続の根拠となった「天皇制の歴史的根拠」の著者。<br>また、戦後、敗戦国となり、海外から、傷病兵が帰国してきた時、国が何の保証も出来なかった時、三笠宮を名誉総裁にして、友愛十字会を設立、私財で、傷病兵の救済にあたる。昭和27年没。</p>
                     </div>
                     
                     <div>
                         <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">母親について</p>
-                        <p class="mt-2">母親、文子。<br>藤堂家の家老の家柄にそだった文子は、克三郎を、徹底的に質素に育て、麻布中学時代も、友達が、皆、パーカーやモンブランの万年筆を持っていた時代に、彼は、パイロットの千円の万年筆しか、買って貰えなかった。また、克三郎は、大学にはいるまで、牛肉のステーキを食べさせて貰えなかった。</p>
+                        <p class="mt-2 phrase-wrap">母親、文子。<br>藤堂家の家老の家柄にそだった文子は、克三郎を、徹底的に質素に育て、麻布中学時代も、友達が、皆、パーカーやモンブランの万年筆を持っていた時代に、彼は、パイロットの千円の万年筆しか、買って貰えなかった。また、克三郎は、大学にはいるまで、牛肉のステーキを食べさせて貰えなかった。</p>
                     </div>
                     
                     <div>
                         <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">略歴・半生</p>
-                        <p class="mt-2">麻布中学校・高等学校卒業、慶應義塾大学法学部法律学科卒業、三菱銀行入行、その後、衆議院議員園田直代議士の秘書を経て、独立。<br>林屋経営研究所を設立、三菱グループ筆頭顧問弁護士河村卓也の指導のもと、倒産寸前の零細企業の救済、及び、大手企業の企画営業に参加した、イベント多数企画、今日に至る。<br>半生の内に、何度も成功と失敗を繰り返し、何度も、ドン底から、這い上がった人間学の研究者。83歳。</p>
+                        <p class="mt-2 phrase-wrap">麻布中学校・高等学校卒業、慶應義塾大学法学部法律学科卒業、三菱銀行入行、その後、衆議院議員園田直代議士の秘書を経て、独立。<br>林屋経営研究所を設立、三菱グループ筆頭顧問弁護士河村卓也の指導のもと、倒産寸前の零細企業の救済、及び、大手企業の企画営業に参加した、イベント多数企画、今日に至る。<br>半生の内に、何度も成功と失敗を繰り返し、何度も、ドン底から、這い上がった人間学の研究者。83歳。</p>
                     </div>
                 </div>
             </div>
@@ -290,11 +308,14 @@
 
     <!-- 【新設】メッセージセクション6（7ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto phrase-wrap">
             <div class="gs-fade-up text-center mb-20">
-                <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted">
-                    小学生の時、矢内原忠雄の<br class="md:hidden">「余の尊敬する人物」をよんで、<br class="md:hidden">新渡戸稲造に発奮。<br>
-                    その経験をもとに、<br class="md:hidden">「百人の顔」を企画立案する。
+                <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted text-balance">
+                    <span class="inline-phrase">小学生の時、矢内原忠雄の</span><br class="md:hidden">
+                    <span class="inline-phrase">「余の尊敬する人物」をよんで、</span><br class="md:hidden">
+                    <span class="inline-phrase">新渡戸稲造に発奮。</span><br>
+                    <span class="inline-phrase">その経験をもとに、</span><br class="md:hidden">
+                    <span class="inline-phrase">「百人の顔」を企画立案する。</span>
                 </p>
             </div>
 
@@ -323,7 +344,7 @@
             <div class="mt-24 flex flex-col items-center gs-fade-up">
                 <div class="w-full max-w-[200px] md:max-w-[240px] relative group cursor-pointer">
                     <!-- 本の表紙画像（深い影と背表紙風の左ボーダー） -->
-                    <img src="スクリーンショット 2026-04-04 174747.png" alt="[著書の画像]" class="w-full h-auto object-cover rounded-r-md rounded-l-sm shadow-[15px_15px_25px_rgba(0,0,0,0.4)] border border-borderLight group-hover:-translate-y-2 group-hover:shadow-[15px_25px_30px_rgba(0,0,0,0.5)] transition-all duration-500" style="border-left: 5px solid #1a1a1a;">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop" alt="[著書の画像]" class="w-full h-auto object-cover rounded-r-md rounded-l-sm shadow-[15px_15px_25px_rgba(0,0,0,0.4)] border border-borderLight group-hover:-translate-y-2 group-hover:shadow-[15px_25px_30px_rgba(0,0,0,0.5)] transition-all duration-500" style="border-left: 5px solid #1a1a1a;">
                     <!-- 本の背表紙のハイライト（光沢感の演出） -->
                     <div class="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none rounded-r-md w-6"></div>
                 </div>
@@ -335,10 +356,10 @@
     <section class="py-[12vh] px-[8vw] bg-surface border-b border-borderLight overflow-hidden">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between">
             <!-- テキスト側（幅を制限して重なりを完全に防ぐ） -->
-            <div class="w-full lg:w-[45%] space-y-12 z-10 relative">
+            <div class="w-full lg:w-[45%] space-y-12 z-10 relative phrase-wrap">
                 <div class="gs-fade-up">
                     <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase flex items-center gap-4 mb-6">01. Concept</span>
-                    <h2 class="font-serif text-fluid-h2 leading-tight font-bold text-accentDark break-words">
+                    <h2 class="font-serif text-fluid-h2 leading-tight font-bold text-accentDark break-words text-balance">
                         経営とは、<br>哲学を語り継ぐこと。
                     </h2>
                 </div>
@@ -364,15 +385,15 @@
     <!-- 2. 冊子概要 -->
     <section class="py-[12vh] px-[8vw] bg-base">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-20 gs-fade-up flex flex-col md:flex-row justify-between items-start md:items-end">
+            <div class="mb-20 gs-fade-up flex flex-col md:flex-row justify-between items-start md:items-end phrase-wrap">
                 <div>
                     <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase mb-6 block">02. Overview</span>
-                    <h2 class="font-serif text-fluid-h2 font-bold text-accentDark">小学校高学年生が、<br>一人でも読めるやさしい文章で。</h2>
+                    <h2 class="font-serif text-fluid-h2 font-bold text-accentDark text-balance">小学校高学年生が、<br>一人でも読めるやさしい文章で。</h2>
                 </div>
                 <div class="font-serif text-8xl text-borderLight opacity-50 font-light select-none hidden md:block">100 Faces</div>
             </div>
 
-            <div class="max-w-4xl mx-auto space-y-12">
+            <div class="max-w-4xl mx-auto space-y-12 phrase-wrap">
                 <div class="gs-fade-up">
                     <h3 class="font-serif text-2xl text-accentDark font-bold border-b border-borderLight pb-4 mb-6">基本仕様</h3>
                     <ul class="space-y-3 font-sans text-textMain font-medium">
@@ -419,13 +440,13 @@
             </div>
             <div class="grid md:grid-cols-3 gap-12">
                 
-                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group phrase-wrap">
                     <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">01</div>
                     <h3 class="font-serif text-xl text-accentDark font-bold mb-6">日本を形づくる<br>「百人の顔」</h3>
                     <p class="text-textMain leading-loose text-sm font-medium">100名限定の選ばれしリーダーとして、その思想とポートレートを美しく可視化。採用、ブランディング、理念浸透に。長期的に活用できる究極 of ストーリー型資産をここに。</p>
                 </div>
                 
-                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group phrase-wrap">
                     <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">02</div>
                     <h3 class="font-serif text-xl text-accentDark font-bold mb-6 leading-relaxed">出身小学校、中学校、高等学校へ、<br>「百人の顔」を寄贈する社会的意義。</h3>
                     <p class="text-textMain leading-loose text-sm font-medium mb-6">協賛頂いた経営者さまの出身小学校（中学校・高等学校）へ、掲載誌を、寄贈します。</p>
@@ -436,7 +457,7 @@
                     </ul>
                 </div>
 
-                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group">
+                <div class="gs-card p-10 border border-borderLight bg-base relative overflow-hidden group phrase-wrap">
                     <div class="text-accent/20 text-7xl font-serif absolute -top-4 -right-2">03</div>
                     <h3 class="font-serif text-xl text-accentDark font-bold mb-6">長期的に利用できる<br>ブランディング資産</h3>
                     <p class="text-textMain leading-loose text-sm font-medium mb-4">本誌は以下のような場面で、継続的に、活用可能です。</p>
@@ -460,7 +481,7 @@
                 <h2 class="font-serif text-fluid-h2 text-accentDark font-bold">価値創出型の協賛プラン</h2>
             </div>
 
-            <div class="bg-white border border-borderLight shadow-lg rounded-sm overflow-hidden gs-fade-up">
+            <div class="bg-white border border-borderLight shadow-lg rounded-sm overflow-hidden gs-fade-up phrase-wrap">
                 <div class="p-8 md:p-16 border-b border-borderLight flex flex-col md:flex-row justify-between items-center bg-accentDark text-white">
                     <div class="mb-8 md:mb-0 text-center md:text-left">
                         <h3 class="font-serif text-3xl font-bold mb-2">協賛金額</h3>
@@ -510,9 +531,9 @@
                 <h2 class="font-serif text-fluid-h2 text-accentDark font-bold">発起人・林屋克三郎による選考</h2>
             </div>
             
-            <div class="gs-fade-up bg-base p-8 md:p-12 border border-borderLight mb-16 relative shadow-sm">
+            <div class="gs-fade-up bg-base p-8 md:p-12 border border-borderLight mb-16 relative shadow-sm phrase-wrap">
                 <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-                <p class="font-sans text-textMain text-lg leading-loose font-bold">
+                <p class="font-sans text-textMain text-lg leading-loose font-bold text-balance">
                     本プロジェクトにおける「100名」の選出は、発起人である林屋克三郎自身が行います。
                 </p>
             </div>
@@ -561,8 +582,8 @@
 
     <!-- フッター -->
     <footer id="contact" class="py-[15vh] px-[8vw] bg-textMain text-center text-white relative">
-        <div class="max-w-4xl mx-auto gs-fade-up">
-            <h2 class="font-serif text-4xl md:text-6xl mb-16 leading-tight font-light">
+        <div class="max-w-4xl mx-auto gs-fade-up phrase-wrap">
+            <h2 class="font-serif text-4xl md:text-6xl mb-16 leading-tight font-light text-balance">
                 あなたの哲学を、<br><span class="italic opacity-80">未来の資産に。</span>
             </h2>
             <a href="mailto:shiozawa@actilus.co.jp" class="inline-block border border-white px-12 py-6 rounded-full font-serif text-lg hover:bg-white hover:text-textMain transition-all duration-500 mb-20 font-bold">
