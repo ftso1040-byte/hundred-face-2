@@ -138,7 +138,7 @@
                 </div>
                 <!-- 画像2 -->
                 <div class="aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl">
-                    <img src="スクリーンショット 2026-04-04 162824.png" alt="[経営者の画像2]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="[経営者の画像2]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
                     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <span class="text-white/70 font-sans tracking-[0.2em] text-sm font-bold bg-accentDark/50 px-4 py-2 rounded">IMAGE 2</span>
                     </div>
@@ -147,14 +147,49 @@
         </div>
     </section>
 
+    <!-- 【新設】メッセージセクション2（3ページ目） -->
+    <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up">
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12">
+                嘗て、我が国は、家電や、パソコン、スマートフォンなど、<br>
+                世界に冠たる、物作り大国でした。
+            </p>
+            <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
+            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20">
+                それが、いつの間にか、韓国や中国の台頭で、<br>
+                失われてしまったのです。
+            </p>
+            
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 mt-8">
+                そして、嘗て、日本は、<br class="md:hidden">世界一平和で安全な国でした。
+            </p>
+            <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
+            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted mb-20">
+                それが、いつの間にか、<br class="md:hidden">詐欺師と強盗の蔓延る国になってしまったのです。
+            </p>
+
+            <!-- 追加：家電と新聞記事の画像スペース -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+                <!-- 左：家電の画像 -->
+                <div class="aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="[洗濯機など分かりやすい家電の画像]" class="w-full h-full object-cover">
+                </div>
+                <!-- 右：新聞記事の画像 -->
+                <div class="aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop" alt="[新聞記事の画像]" class="w-full h-full object-cover grayscale">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 1. 企画趣旨：【切り口4】共感・本質（エモーショナル） -->
-    <section class="py-[12vh] px-[8vw] bg-surface border-b border-borderLight">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-            <!-- PC版での幅を lg:w-1/2 に広げ、テキストが画像と重ならないように調整 -->
-            <div class="w-full lg:w-1/2 space-y-12">
+    <section class="py-[12vh] px-[8vw] bg-surface border-b border-borderLight overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between">
+            <!-- テキスト側（幅を制限して重なりを完全に防ぐ） -->
+            <div class="w-full lg:w-[45%] space-y-12 z-10 relative">
                 <div class="gs-fade-up">
                     <span class="font-sans text-accent tracking-[0.2em] text-xs font-semibold uppercase flex items-center gap-4 mb-6">01. Concept</span>
-                    <h2 class="font-serif text-fluid-h2 leading-tight font-bold text-accentDark break-keep">
+                    <h2 class="font-serif text-fluid-h2 leading-tight font-bold text-accentDark break-words">
                         経営とは、<br>哲学を語り継ぐこと。
                     </h2>
                 </div>
@@ -170,8 +205,8 @@
                     </div>
                 </div>
             </div>
-            <!-- 画像側の幅も lg:w-1/2 にしてバランスを取る -->
-            <div class="w-full lg:w-1/2 h-[50vh] lg:h-[70vh] parallax-wrapper shadow-2xl">
+            <!-- 画像側 -->
+            <div class="w-full lg:w-[50%] h-[50vh] lg:h-[70vh] parallax-wrapper shadow-2xl z-0 relative">
                 <img src="スクリーンショット 2026-03-19 172614.png" class="parallax-img grayscale contrast-125" alt="[Image of Philosophy]">
             </div>
         </div>
