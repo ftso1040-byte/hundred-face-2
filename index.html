@@ -87,49 +87,79 @@
            印刷用（プリントアウト）のCSS設定
            ========================================================================== */
         @media print {
-            /* 背景色や画像を強制的に印刷する設定（※ブラウザ側でも背景印刷をONにする必要があります） */
+            /* 背景色や画像を強制的に印刷する設定 */
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #FAFAFA !important;
             }
 
-            /* 印刷時に不要な要素（ナビゲーションやスクロール指示など）を非表示 */
+            /* 印刷時に不要な要素を非表示 */
             nav, .animate-scroll-line, a[href^="#"] {
                 display: none !important;
             }
 
-            /* GSAPアニメーションで透明(opacity:0)になっている要素を、印刷時は全て強制的に表示 */
+            /* アニメーションを完了状態に固定 */
             .char, .gs-reveal, .gs-fade-up, .gs-card {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
             }
 
-            /* 各セクションの終わりで強制的に改ページを行い、スライド資料のように分割する */
+            /* 画面用の巨大な高さ・余白を印刷用にリセットして詰める */
             header, section {
+                min-height: auto !important;
+                height: auto !important;
+                padding: 1.5cm 1cm !important;
                 break-after: page;
                 page-break-after: always;
             }
+            .py-[15vh], .py-[6vh] {
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+            .mt-16, .mb-16, .mt-24, .mb-20, .my-12, .mb-12 {
+                margin-top: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
 
-            /* パララックス効果の画像が印刷時にずれないように静的配置にリセット */
+            /* ★画像の巨大化を防ぐ強制設定★ */
+            .aspect-video, .aspect-\[4\/3\], .aspect-\[3\/4\], .max-w-2xl, .max-w-md {
+                max-height: 250px !important;
+                width: auto !important;
+                aspect-ratio: auto !important;
+                display: flex !important;
+                justify-content: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            
+            img {
+                max-height: 250px !important;
+                width: auto !important;
+                object-fit: contain !important;
+                box-shadow: none !important;
+            }
+
+            /* パララックス効果の解除 */
             .parallax-img {
                 position: static !important;
-                height: auto !important;
-                transform: none !important;
-                width: 100% !important;
             }
             .parallax-wrapper {
                 height: auto !important;
             }
 
-            /* スマホ用改行を印刷時（A4などを想定）に無効化し、自然な折り返しに任せる */
+            /* スマホ用改行を印刷時に無効化 */
             .md\:hidden {
                 display: none !important;
             }
             
-            /* フッターで不自然な改ページが起きないようにする */
-            footer {
+            /* フッターやブロック要素で不自然な改ページが起きないようにする */
+            footer, .bg-white\/5, .bg-gray-100 {
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
