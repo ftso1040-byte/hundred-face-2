@@ -84,13 +84,12 @@
         .animate-scroll-line { animation: scrollLine 2.5s infinite ease-in-out; }
 
         /* ==========================================================================
-           【強力版】印刷用（プリントアウト）のCSS設定
+           【極限版】印刷用（プリントアウト）のCSS設定（Webの見た目には影響しません）
            ========================================================================== */
         @media print {
-            /* 用紙サイズと標準マージン */
             @page {
                 size: A4;
-                margin: 15mm;
+                margin: 12mm;
             }
 
             body {
@@ -100,55 +99,59 @@
                 color: #1A1A1A !important;
             }
 
-            /* 不要な要素を完全に非表示 */
+            /* 不要な要素を非表示 */
             nav, .animate-scroll-line, a[href^="#"] {
                 display: none !important;
             }
 
-            /* アニメーション状態の解除（文字を最初から表示） */
+            /* アニメーション状態の解除 */
             .char, .gs-reveal, .gs-fade-up, .gs-card {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
             }
 
-            /* --- 余白の大幅カットと改ページ設定 --- */
+            /* --- 余白の極限カットと改ページ設定 --- */
             header, section, footer {
                 min-height: auto !important;
                 height: auto !important;
-                padding: 0 !important; /* Web用の大きなPaddingを無効化 */
+                padding: 0 !important;
                 margin: 0 !important;
-                break-after: page !important; /* 各セクションで強制改ページ */
+                break-after: page !important;
                 page-break-after: always !important;
             }
             
-            /* Web用の余白クラスを数ミリ単位に圧縮 */
-            .py-\[15vh\], .py-\[6vh\] { padding-top: 10mm !important; padding-bottom: 10mm !important; }
-            .mt-16, .mb-16, .mt-24, .mb-20, .my-12, .mb-12, .mb-8, .mt-12 {
-                margin-top: 5mm !important;
-                margin-bottom: 5mm !important;
+            .py-\[15vh\], .py-\[6vh\] { padding-top: 5mm !important; padding-bottom: 5mm !important; }
+            .mt-16, .mb-16, .mt-24, .mb-20, .my-12, .mb-12, .mb-8, .mt-12, .mb-6 {
+                margin-top: 3mm !important;
+                margin-bottom: 3mm !important;
             }
-            .gap-12 { gap: 5mm !important; }
+            .gap-12 { gap: 3mm !important; }
+            
+            /* Tailwindの行間用マージンクラスを印刷時のみ強制的に詰める */
+            [class*="space-y-"] > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 2mm !important;
+            }
 
-            /* --- フォントサイズの絶対固定（文字の大きさが変わるのを防ぐ） --- */
-            .text-fluid-h1 { font-size: 26pt !important; line-height: 1.4 !important; }
-            .text-fluid-h2 { font-size: 20pt !important; line-height: 1.4 !important; }
-            .text-4xl, .text-5xl, .text-6xl { font-size: 22pt !important; }
-            .text-2xl, .text-3xl { font-size: 16pt !important; }
-            .text-xl { font-size: 14pt !important; }
-            .text-lg { font-size: 12pt !important; }
-            .text-base, .text-sm { font-size: 11pt !important; }
-            p, li { line-height: 1.6 !important; }
+            /* --- フォントサイズの絶対固定（1段階小さくして押し込み防止） --- */
+            .text-fluid-h1 { font-size: 22pt !important; line-height: 1.3 !important; }
+            .text-fluid-h2 { font-size: 18pt !important; line-height: 1.3 !important; }
+            .text-4xl, .text-5xl, .text-6xl { font-size: 18pt !important; }
+            .text-2xl, .text-3xl { font-size: 14pt !important; }
+            .text-xl { font-size: 12pt !important; }
+            .text-lg { font-size: 11pt !important; }
+            .text-base, .text-sm { font-size: 10pt !important; }
+            p, li { line-height: 1.4 !important; }
 
-            /* --- 画像サイズの強制縮小（押し出し防止） --- */
+            /* --- 画像サイズの強制縮小（もう一段階小さく） --- */
             .aspect-video, .aspect-\[4\/3\], .aspect-\[3\/4\], .max-w-2xl, .max-w-md, .max-w-xs, .max-w-\[200px\], .max-w-\[180px\], .max-w-\[160px\], .max-w-\[140px\] {
-                max-height: 150px !important; /* ★印刷時は画像を高さ約4cmに強制縮小 */
+                max-height: 120px !important; /* 約3cm強に圧縮 */
                 width: auto !important;
                 aspect-ratio: auto !important;
                 display: flex !important;
                 justify-content: center !important;
-                margin-top: 5mm !important;
-                margin-bottom: 5mm !important;
+                margin-top: 3mm !important;
+                margin-bottom: 3mm !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
                 border: none !important;
@@ -156,7 +159,7 @@
             }
             
             img {
-                max-height: 150px !important;
+                max-height: 120px !important;
                 width: auto !important;
                 object-fit: contain !important;
                 box-shadow: none !important;
