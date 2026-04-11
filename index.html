@@ -84,84 +84,95 @@
         .animate-scroll-line { animation: scrollLine 2.5s infinite ease-in-out; }
 
         /* ==========================================================================
-           印刷用（プリントアウト）のCSS設定
+           【強力版】印刷用（プリントアウト）のCSS設定
            ========================================================================== */
         @media print {
-            /* 背景色や画像を強制的に印刷する設定 */
+            /* 用紙サイズと標準マージン */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #FAFAFA !important;
+                color: #1A1A1A !important;
             }
 
-            /* 印刷時に不要な要素を非表示 */
+            /* 不要な要素を完全に非表示 */
             nav, .animate-scroll-line, a[href^="#"] {
                 display: none !important;
             }
 
-            /* アニメーションを完了状態に固定 */
+            /* アニメーション状態の解除（文字を最初から表示） */
             .char, .gs-reveal, .gs-fade-up, .gs-card {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
             }
 
-            /* 画面用の巨大な高さ・余白を印刷用にリセットして詰める */
-            header, section {
+            /* --- 余白の大幅カットと改ページ設定 --- */
+            header, section, footer {
                 min-height: auto !important;
                 height: auto !important;
-                padding: 1.5cm 1cm !important;
-                break-after: page;
-                page-break-after: always;
+                padding: 0 !important; /* Web用の大きなPaddingを無効化 */
+                margin: 0 !important;
+                break-after: page !important; /* 各セクションで強制改ページ */
+                page-break-after: always !important;
             }
-            .py-[15vh], .py-[6vh] {
-                padding-top: 1rem !important;
-                padding-bottom: 1rem !important;
+            
+            /* Web用の余白クラスを数ミリ単位に圧縮 */
+            .py-\[15vh\], .py-\[6vh\] { padding-top: 10mm !important; padding-bottom: 10mm !important; }
+            .mt-16, .mb-16, .mt-24, .mb-20, .my-12, .mb-12, .mb-8, .mt-12 {
+                margin-top: 5mm !important;
+                margin-bottom: 5mm !important;
             }
-            .mt-16, .mb-16, .mt-24, .mb-20, .my-12, .mb-12 {
-                margin-top: 1.5rem !important;
-                margin-bottom: 1.5rem !important;
-            }
+            .gap-12 { gap: 5mm !important; }
 
-            /* ★画像の巨大化を防ぐ強制設定★ */
-            .aspect-video, .aspect-\[4\/3\], .aspect-\[3\/4\], .max-w-2xl, .max-w-md {
-                max-height: 250px !important;
+            /* --- フォントサイズの絶対固定（文字の大きさが変わるのを防ぐ） --- */
+            .text-fluid-h1 { font-size: 26pt !important; line-height: 1.4 !important; }
+            .text-fluid-h2 { font-size: 20pt !important; line-height: 1.4 !important; }
+            .text-4xl, .text-5xl, .text-6xl { font-size: 22pt !important; }
+            .text-2xl, .text-3xl { font-size: 16pt !important; }
+            .text-xl { font-size: 14pt !important; }
+            .text-lg { font-size: 12pt !important; }
+            .text-base, .text-sm { font-size: 11pt !important; }
+            p, li { line-height: 1.6 !important; }
+
+            /* --- 画像サイズの強制縮小（押し出し防止） --- */
+            .aspect-video, .aspect-\[4\/3\], .aspect-\[3\/4\], .max-w-2xl, .max-w-md, .max-w-xs, .max-w-\[200px\], .max-w-\[180px\], .max-w-\[160px\], .max-w-\[140px\] {
+                max-height: 150px !important; /* ★印刷時は画像を高さ約4cmに強制縮小 */
                 width: auto !important;
                 aspect-ratio: auto !important;
                 display: flex !important;
                 justify-content: center !important;
+                margin-top: 5mm !important;
+                margin-bottom: 5mm !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
                 border: none !important;
                 box-shadow: none !important;
             }
             
             img {
-                max-height: 250px !important;
+                max-height: 150px !important;
                 width: auto !important;
                 object-fit: contain !important;
                 box-shadow: none !important;
             }
 
             /* パララックス効果の解除 */
-            .parallax-img {
-                position: static !important;
-            }
-            .parallax-wrapper {
-                height: auto !important;
-            }
+            .parallax-img { position: static !important; }
+            .parallax-wrapper { height: auto !important; }
 
             /* スマホ用改行を印刷時に無効化 */
-            .md\:hidden {
-                display: none !important;
-            }
+            .md\:hidden { display: none !important; }
             
-            /* フッターやブロック要素で不自然な改ページが起きないようにする */
-            footer, .bg-white\/5, .bg-gray-100 {
-                break-inside: avoid;
-                page-break-inside: avoid;
+            /* 要素の途中での不自然な改ページを防ぐ */
+            .gs-card, ul, li, .bg-white\/5, .bg-gray-100, .bg-white, .grid {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
             }
         }
     </style>
@@ -642,8 +653,11 @@
                 </p>
                 
                 <h3 class="font-serif text-xl md:text-2xl font-bold mb-6 text-white border-b border-white/20 pb-4">お振り込み口座</h3>
-                <div class="font-sans text-base md:text-lg leading-loose text-white/50 h-12">
-                    <!-- 口座情報は追記予定のため空欄 -->
+                <div class="font-sans text-base md:text-lg leading-loose text-white/90">
+                    <p>三菱UFJ銀行　銀座通　支店</p>
+                    <p>普　0362230</p>
+                    <p class="mt-4">NPO 先端医療をささえる会</p>
+                    <p>代表　林屋克三郎</p>
                 </div>
             </div>
         </div>
