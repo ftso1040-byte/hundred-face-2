@@ -126,34 +126,39 @@
         </div>
     </header>
 
-    <!-- 【新設】メッセージセクション -->
-    <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
-            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-12 opacity-90">
-                <span class="inline-phrase">嘗ては二宮尊徳、</span><br>
-                <span class="inline-phrase">今日では大谷翔平。</span><br>
-                <span class="inline-phrase">また、マスコミのスターが、</span><br>
-                <span class="inline-phrase">教科書にのっていました。</span>
+    <!-- 【新設】メッセージセクション（1画面・1ページに収める調整） -->
+    <section class="py-[6vh] px-[8vw] bg-accentDark text-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center break-inside-avoid">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap w-full">
+            <p class="font-serif text-base md:text-xl leading-loose tracking-widest font-medium mb-4 opacity-90">
+                <span class="inline-phrase">嘗ては、</span><br class="md:hidden">
+                <span class="inline-phrase">勤勉の象徴として二宮尊徳、</span><br>
+                <span class="inline-phrase">今日では、</span><br class="md:hidden">
+                <span class="inline-phrase">夢の象徴として大谷翔平が、</span><br>
+                <span class="inline-phrase">教科書にのっていますが、</span>
             </p>
-            <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-16 opacity-90">
-                <span class="inline-phrase">しかし、日本の今日を</span><span class="inline-phrase">支えているのは、</span><br>
-                <span class="inline-phrase">そんな一人や二人の</span><span class="inline-phrase">スターではなく、</span><br>
-                <span class="inline-phrase">あなたのような中小・</span><span class="inline-phrase">零細企業の</span><span class="inline-phrase">経営者の方々なのです。</span>
+            <p class="font-serif text-base md:text-xl leading-loose tracking-widest font-medium mb-6 opacity-90">
+                <span class="inline-phrase">これからは、</span><br class="md:hidden">
+                <span class="inline-phrase">社会を支える象徴として、</span><br>
+                <span class="inline-phrase">中小零細企業の経営者の皆様が、</span><br>
+                <span class="inline-phrase">取り上げられるべきではないですか！</span>
             </p>
-            <div class="w-12 h-[1px] bg-white/30 mx-auto my-12"></div>
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-balance">
-                だから、あなたこそが、<br>
-                青少年の教材になって欲しいのです。
+            <div class="w-12 h-[1px] bg-white/30 mx-auto my-6"></div>
+            
+            <!-- リードコピー級（text-fluid-h2）の大きなサイズ -->
+            <p class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold mb-6 text-balance">
+                <span class="inline-phrase">だから、あなたこそが、</span><br>
+                <span class="inline-phrase">青少年の教材に</span><span class="inline-phrase">なって欲しくて、</span><br>
+                <span class="inline-phrase">インタビューを</span><span class="inline-phrase">させて欲しいのです。</span>
             </p>
             
-            <!-- 追加：経営者の画像スペース（1枚中央配置に変更） -->
-            <div class="max-w-xs mx-auto mt-16 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
+            <!-- 経営者の画像1（このセクション内に含め、高さを節約） -->
+            <div class="w-full max-w-[140px] md:max-w-[180px] mx-auto mt-2 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="スクリーンショット 2026-04-04 162652.png" alt="[経営者の画像1]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
         </div>
     </section>
 
-    <!-- 【新設】メッセージセクション2（3ページ目） -->
+    <!-- メッセージセクション2（3ページ目：家電） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
         <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 text-balance">
@@ -170,12 +175,16 @@
                 <span class="inline-phrase">失われてしまったのです。</span>
             </p>
 
-            <!-- 追加：家電の画像スペース -->
-            <div class="max-w-2xl mx-auto mb-24 aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
+            <div class="max-w-2xl mx-auto mt-16 aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="[洗濯機など分かりやすい家電の画像]" class="w-full h-full object-cover">
             </div>
-            
-            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 mt-8 text-balance">
+        </div>
+    </section>
+
+    <!-- 追加：メッセージセクション2.5（4ページ目：治安） -->
+    <section class="py-[15vh] px-[8vw] bg-base text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
+            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-12 text-balance">
                 <span class="inline-phrase">そして、嘗て、日本は、</span><br>
                 <span class="inline-phrase">世界一平和で</span><br class="md:hidden"><span class="inline-phrase">安全な国でした。</span>
             </p>
@@ -186,14 +195,13 @@
                 <span class="inline-phrase">なってしまったのです。</span>
             </p>
 
-            <!-- 追加：新聞記事の画像スペース -->
-            <div class="max-w-2xl mx-auto aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
+            <div class="max-w-2xl mx-auto mt-16 aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop" alt="[新聞記事の画像]" class="w-full h-full object-cover grayscale">
             </div>
         </div>
     </section>
 
-    <!-- 【新設】メッセージセクション3（4ページ目） -->
+    <!-- メッセージセクション3（5ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-white/90 text-balance">
@@ -210,42 +218,45 @@
             
             <div class="w-12 h-[1px] bg-white/30 mx-auto my-12"></div>
             
-            <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold text-balance">
-                だから、世界一の<br class="md:hidden">平和と安全な国が出来たのです。
+            <!-- リードコピー級（text-fluid-h2）の大きなサイズに変更 -->
+            <p class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold mb-16 text-balance">
+                <span class="inline-phrase">だから、世界一の</span><br class="md:hidden">
+                <span class="inline-phrase">平和と安全な国が</span><span class="inline-phrase">出来たのです。</span>
             </p>
 
-            <!-- 追加：お茶の画像 -->
             <div class="max-w-2xl mx-auto mt-16 aspect-video bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="Gemini_Generated_Image_6c5d6l6c5d6l6c5d.png" alt="[お茶の画像]" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
         </div>
     </section>
 
-    <!-- 【新設】メッセージセクション4（5ページ目） -->
+    <!-- メッセージセクション4（5ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
         <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-16 text-textMuted">
                 <span class="inline-phrase">ところが、</span><span class="inline-phrase">それらの</span><span class="inline-phrase">日本人らしさが、</span><br>
-                <span class="inline-phrase">日本人を強くしたと恐れる</span><br class="md:hidden"><span class="inline-phrase">アメリカの占領政策により、</span><br>
-                <span class="inline-phrase">日本の教育政策を、</span><br class="md:hidden"><span class="inline-phrase">滅茶苦茶にされてしまい、</span><br>
-                <span class="inline-phrase">身勝手で、</span><span class="inline-phrase">自分のことしか考えない</span><br class="md:hidden"><span class="inline-phrase">ぐうたらな今日の日本人を</span><br class="md:hidden"><span class="inline-phrase">つくられてしまったのです。</span>
+                <span class="inline-phrase">日本を強くしたと恐れる</span><br class="md:hidden"><span class="inline-phrase">マッカーサーの占領政策により、</span><br>
+                <span class="inline-phrase">日本の教育政策を</span><span class="inline-phrase">滅茶苦茶にされてしまい、</span><br>
+                <span class="inline-phrase">身勝手で、</span><span class="inline-phrase">自分のことしか考えない、</span><br>
+                <span class="inline-phrase">ぐうたらな、</span><span class="inline-phrase">今日の日本人を</span><br class="md:hidden"><span class="inline-phrase">つくられてしまったのです。</span>
             </p>
 
             <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
             
-            <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold text-balance">
-                だから、いまこそ、<br>
-                我が国の教育政策を<br class="md:hidden">代えなくてはならないのです。
+            <!-- リードコピー級（text-fluid-h2）の大きなサイズに変更 -->
+            <p class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold text-balance mb-8">
+                <span class="inline-phrase">だから、いまこそ、</span><br>
+                <span class="inline-phrase">我が国の教育政策を</span><br>
+                <span class="inline-phrase">変えなくてはならないのです。</span>
             </p>
 
-            <!-- 追加：マッカーサーの画像スペース -->
             <div class="max-w-md mx-auto mt-16 aspect-[3/4] bg-gray-100 rounded-sm overflow-hidden border border-borderLight relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="スクリーンショット 2026-04-04 174608.png" alt="[マッカーサーの画像]" class="w-full h-full object-cover grayscale contrast-125">
             </div>
         </div>
     </section>
 
-    <!-- 【新設】メッセージセクション5（6ページ目） -->
+    <!-- メッセージセクション5（6ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center gs-fade-up phrase-wrap">
             <p class="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest font-bold mb-16 text-balance">
@@ -265,49 +276,56 @@
                 <span class="inline-phrase">掲載をお願いするものです。</span>
             </p>
 
-            <!-- 追加：人物画像スペース -->
-            <div class="max-w-xs mx-auto mt-12 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
+            <!-- 画像サイズを少し小さく調整 (max-w-xs -> max-w-[160px] md:max-w-[200px]) -->
+            <div class="w-full max-w-[160px] md:max-w-[200px] mx-auto mt-12 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="スクリーンショット 2026-04-04 174909.png" alt="[林屋克三郎氏の画像]" class="w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
 
-            <!-- 追加：林屋克三郎の略歴 -->
             <div class="mt-24 text-left max-w-3xl mx-auto bg-white/5 p-8 md:p-12 rounded-sm border border-white/20 shadow-lg relative">
                 <div class="absolute top-0 left-0 w-1 h-full bg-white/50"></div>
                 <h3 class="font-serif text-2xl md:text-3xl font-bold mb-10 text-center tracking-widest border-b border-white/20 pb-6 text-balance">林屋克三郎の略歴</h3>
                 
                 <div class="space-y-10 font-sans text-sm md:text-base leading-loose text-white/90">
                     <div>
-                        <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">誕生日</p>
-                        <p class="mt-2">1943年5月23日<br>双子座　O型</p>
+                        <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">生年月日</p>
+                        <p class="mt-2">1943年5月23日</p>
                     </div>
                     
                     <div>
                         <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">父親について</p>
-                        <p class="mt-2 phrase-wrap">我が国に、鉄鋼業を創った鉄鋼王、東京鋼材（後に、三菱の岩崎小弥太と組んで三菱鋼材）の創業者。文学博士。<br>敗戦時、マッカーサーが、天皇制存続の根拠となった「天皇制の歴史的根拠」の著者。<br>また、戦後、敗戦国となり、海外から、傷病兵が帰国してきた時、国が何の保証も出来なかった時、三笠宮を名誉総裁にして、友愛十字会を設立、私財で、傷病兵の救済にあたる。昭和27年没。</p>
-                    </div>
-                    
-                    <div>
-                        <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">母親について</p>
-                        <p class="mt-2 phrase-wrap">母親、文子。<br>藤堂家の家老の家柄にそだった文子は、克三郎を、徹底的に質素に育て、麻布中学時代も、友達が、皆、パーカーやモンブランの万年筆を持っていた時代に、彼は、パイロットの千円の万年筆しか、買って貰えなかった。また、克三郎は、大学にはいるまで、牛肉のステーキを食べさせて貰えなかった。</p>
+                        <p class="mt-2 phrase-wrap">
+                            林屋友次郎<br>
+                            明治19年5月15日、石川県金沢生まれ。<br>
+                            明治43年　慶應義塾大学理財科を卒業。<br>
+                            大正4年　東京鋼材を創業、社長に就任。（のち岩崎小弥太と組んで、三菱鋼材）、大正15年同社社長を辞任。駒澤大学教授に就任。<br>
+                            昭和15年　東京帝国大学より、文学博士の学位を受ける。<br>
+                            敗戦時、マッカーサーが、天皇制存続の根拠となった「天皇制の歴史的根拠」の著者。<br>
+                            戦後、実業界に戻り、会社更生法の立法に奔走、自ら初代管財人に就任。<br>
+                            また、戦後、国家が敗戦で、救済出来ないでいた傷病兵を、三笠宮を名誉総裁にして、私財で、友愛十字会を設立、救済にあたる。<br>
+                            昭和28年12月21日、心筋梗塞により逝去。享年67歳。
+                        </p>
                     </div>
                     
                     <div>
                         <p class="font-bold text-lg mb-2 text-white tracking-widest border-b border-white/10 inline-block pb-1">略歴・半生</p>
-                        <p class="mt-2 phrase-wrap">麻布中学校・高等学校卒業、慶應義塾大学法学部法律学科卒業、三菱銀行入行、その後、衆議院議員園田直代議士の秘書を経て、独立。<br>林屋経営研究所を設立、三菱グループ筆頭顧問弁護士河村卓也の指導のもと、倒産寸前の零細企業の救済、及び、大手企業の企画営業に参加した、イベント多数企画、今日に至る。<br>半生の内に、何度も成功と失敗を繰り返し、何度も、ドン底から、這い上がった人間学の研究者。83歳。</p>
+                        <p class="mt-2 phrase-wrap">麻布中学校・高等学校卒業、慶應義塾大学法学部法律学科卒業、三菱銀行入行、その後、衆議院議員園田直代議士の秘書を経て、独立。<br>林屋経営研究所を設立。三菱グループ筆頭顧問弁護士河村卓也弁護士指導のもと、倒産寸前の零細企業の救済、及び、大手企業の企画営業に参加した。イベント多数企画。今日に至る。半生のうちに、何度も、成功と失敗を繰り返し、何度も、ドン底から這い上がった経験多数。83歳。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 【新設】メッセージセクション6（7ページ目） -->
+    <!-- メッセージセクション6（7ページ目） -->
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
         <div class="max-w-4xl mx-auto phrase-wrap">
             <div class="gs-fade-up text-center mb-20">
+                <!-- 最初の行をリードコピー級（text-fluid-h2）の大きなサイズに変更 -->
+                <p class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold text-accentDark text-balance mb-8">
+                    <span class="inline-phrase">小学生の時、矢内原忠雄の「余の尊敬する人物」を読んで、</span><br>
+                    <span class="inline-phrase">新渡戸稲造に発奮。</span>
+                </p>
+                <!-- 残りの文章は元のサイズで表示 -->
                 <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted text-balance">
-                    <span class="inline-phrase">小学生の時、矢内原忠雄の</span><br class="md:hidden">
-                    <span class="inline-phrase">「余の尊敬する人物」をよんで、</span><br class="md:hidden">
-                    <span class="inline-phrase">新渡戸稲造に発奮。</span><br>
                     <span class="inline-phrase">その経験をもとに、</span><br class="md:hidden">
                     <span class="inline-phrase">「百人の顔」を企画立案する。</span>
                 </p>
@@ -318,48 +336,253 @@
                     <h3 class="font-serif text-xl font-bold mb-6 text-accent border-b border-accent/20 pb-2 inline-block">尊敬する人物</h3>
                     <ul class="font-serif text-lg leading-loose space-y-2">
                         <li>東郷平八郎</li>
-                        <li>秋山真之</li>
+                        <li>秋山　真之</li>
                     </ul>
                 </div>
                 <div class="bg-base p-8 rounded-sm border border-borderLight shadow-sm">
                     <h3 class="font-serif text-xl font-bold mb-6 text-accent border-b border-accent/20 pb-2 inline-block">師事した人物</h3>
                     <ul class="font-serif text-lg leading-loose space-y-2">
-                        <li>川端康成</li>
-                        <li>井上　靖</li>
+                        <li>川端　康成</li>
+                        <li>井上　　靖</li>
                         <li>司馬遼太郎</li>
-                        <li>脇　　正</li>
-                        <li>園田　直</li>
-                        <li>堤　清二</li>
+                        <li>脇　　　正</li>
+                        <li>園田　　直</li>
+                        <li>河村　卓也</li>
+                        <li>堤　　清二</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 追加：著書の画像スペース（本に見える立体的なスタイル） -->
             <div class="mt-24 flex flex-col items-center gs-fade-up">
                 <div class="w-full max-w-[200px] md:max-w-[240px] relative group cursor-pointer">
-                    <!-- 本の表紙画像（深い影と背表紙風の左ボーダー） -->
                     <img src="スクリーンショット 2026-04-04 174747.png" alt="[著書の画像]" class="w-full h-auto object-cover rounded-r-md rounded-l-sm shadow-[15px_15px_25px_rgba(0,0,0,0.4)] border border-borderLight group-hover:-translate-y-2 group-hover:shadow-[15px_25px_30px_rgba(0,0,0,0.5)] transition-all duration-500" style="border-left: 5px solid #1a1a1a;">
-                    <!-- 本の背表紙のハイライト（光沢感の演出） -->
                     <div class="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none rounded-r-md w-6"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- フッター -->
+    <!-- メッセージセクション7（10ページ目：企画趣旨） -->
+    <section class="py-[15vh] px-[8vw] bg-base text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-4xl mx-auto phrase-wrap">
+            <div class="text-center mb-16 gs-fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-accentDark tracking-widest">企画趣旨</h2>
+            </div>
+            
+            <div class="gs-fade-up bg-white p-8 md:p-16 rounded-sm border border-borderLight shadow-sm">
+                <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium mb-12 text-balance text-center text-textMain">
+                    <span class="inline-phrase">日本の各界で活躍する１００名の経営者に、</span><br class="md:hidden">
+                    <span class="inline-phrase">幼年時代・人生の転機・困難・意思決定の軸・</span><br>
+                    <span class="inline-phrase">経営哲学などを語っていただき、</span><br class="md:hidden">
+                    <span class="inline-phrase">一冊の冊子として編纂します。</span>
+                </p>
+
+                <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
+
+                <p class="font-serif text-xl md:text-3xl leading-loose tracking-widest font-bold mb-10 text-center text-balance text-textMain">
+                    <span class="inline-phrase">本企画は、</span><br class="md:hidden"><span class="inline-phrase">単なる成功談集ではありません。</span>
+                </p>
+
+                <ul class="font-serif text-base md:text-xl leading-loose tracking-widest font-medium space-y-4 max-w-2xl mx-auto mb-12 text-textMain">
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3">■</span>
+                        <span class="text-textMain">経営者の思想・価値観を社会的記録として残す</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3">■</span>
+                        <span class="text-textMain">経営という営みの本質を、次世代に手渡す</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3">■</span>
+                        <span class="text-textMain">個人の歩みを「社会的資産」へ昇華させる</span>
+                    </li>
+                </ul>
+
+                <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-center text-balance text-textMain">
+                    <span class="inline-phrase">ことを目的とした、</span><br>
+                    <span class="inline-phrase font-bold text-accentDark">記録性・公共性の高い出版企画です。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11ページ目：冊子概要・構成 -->
+    <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-5xl mx-auto phrase-wrap">
+            <div class="text-center mb-16 gs-fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-widest text-balance">冊子概要・構成</h2>
+                <p class="font-serif text-lg md:text-2xl mt-6 text-textMuted tracking-widest">小学校高学年生が、<br class="md:hidden">一人でも読めるやさしい文章で。</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-16">
+                <div class="gs-fade-up">
+                    <h3 class="font-serif text-2xl font-bold border-b border-borderLight pb-4 mb-6 text-accentDark">基本仕様</h3>
+                    <ul class="space-y-4 font-sans text-base md:text-lg font-medium text-textMain leading-loose">
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">想定読者：小学校高学年（5・6年生）～大人</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">掲載人数：経営者100名</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">判型：A4判 ／ オールカラー</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">掲載スペース：1名につき 2ページ</span></li>
+                    </ul>
+                </div>
+
+                <div class="gs-fade-up">
+                    <h3 class="font-serif text-2xl font-bold border-b border-borderLight pb-4 mb-6 text-accentDark">編集方針</h3>
+                    <ul class="space-y-4 font-sans text-base md:text-lg font-medium text-textMain leading-loose">
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">専門用語・業界用語は極力使わない。</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">一文を短く、具体例を多く。</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">「考え方」「選び方」「失敗の乗り越え方」を中心に構成</span></li>
+                    </ul>
+                </div>
+
+                <div class="gs-fade-up">
+                    <h3 class="font-serif text-2xl font-bold border-b border-borderLight pb-4 mb-6 text-accentDark">主な掲載内容</h3>
+                    <ul class="space-y-4 font-sans text-base md:text-lg font-medium text-textMain mb-12 leading-loose">
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">子どもの頃に大切にしていたこと</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">失敗した経験と、そのとき考えたこと</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">仕事で迷ったときの判断のしかた</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">今も大切にしている考え方</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">未来を生きる子どもたちへのメッセージ</span></li>
+                    </ul>
+                    
+                    <div class="w-full bg-white border border-borderLight p-4 md:p-8 shadow-xl rounded-sm">
+                        <img src="スクリーンショット 2026-03-19 172633.png" alt="[本誌の見開きサンプル]" class="w-full h-auto object-contain block mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12ページ目：本誌に掲載される価値 -->
+    <section class="py-[15vh] px-[8vw] bg-base text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-7xl mx-auto phrase-wrap">
+            <div class="text-center mb-20 gs-fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-widest text-balance">本誌に掲載される価値</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="gs-card p-10 border border-borderLight bg-white relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-accent/10 text-8xl font-serif absolute -top-6 -right-4 select-none">1</div>
+                    <h3 class="font-serif text-xl font-bold mb-6 relative z-10 leading-relaxed text-accentDark">日本を形づくる<br>「百人の顔」</h3>
+                    <p class="text-textMain leading-loose text-base font-medium relative z-10">100名限定の選ばれしリーダーとして、その思想とポートレートを美しく可視化。採用、ブランディング、理念浸透に。長期的に活用できる究極のストーリー型資産を構築します。</p>
+                </div>
+                
+                <div class="gs-card p-10 border border-borderLight bg-white relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-accent/10 text-8xl font-serif absolute -top-6 -right-4 select-none">2</div>
+                    <h3 class="font-serif text-xl font-bold mb-6 relative z-10 leading-relaxed text-accentDark">出身校へ「百人の顔」を<br>寄贈する社会的意義</h3>
+                    <p class="text-textMain leading-loose text-base font-medium mb-4 relative z-10">協賛頂いた経営者さまの出身校へ、掲載誌を寄贈します。</p>
+                    <ul class="text-textMain leading-loose text-sm font-medium space-y-3 relative z-10">
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">寄贈名義：経営者様ご本人名義</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">寄贈先：原則としてご出身小学校（変更可）</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">意義：協賛は単なる費用負担ではなく、未来への社会貢献です。</span></li>
+                    </ul>
+                </div>
+
+                <div class="gs-card p-10 border border-borderLight bg-white relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-accent/10 text-8xl font-serif absolute -top-6 -right-4 select-none">3</div>
+                    <h3 class="font-serif text-xl font-bold mb-6 relative z-10 leading-relaxed text-accentDark">長期的に利用できる<br>ブランディング資産</h3>
+                    <p class="text-textMain leading-loose text-base font-medium mb-4 relative z-10">本誌は以下のような場面で、継続的に活用可能です。</p>
+                    <ul class="text-textMain leading-loose text-sm font-medium space-y-3 mb-4 relative z-10">
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">採用活動・人材育成</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">社内研修・理念浸透</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">取引先・金融機関との関係構築</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-2 mt-1">■</span><span class="text-textMain">講演・登壇時の紹介資料</span></li>
+                    </ul>
+                    <p class="text-textMain leading-loose text-sm font-medium relative z-10">名刺やWebでは伝えきれない背景を伝える資産となります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13ページ目：協賛の位置づけ・協賛内容 -->
+    <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
+        <div class="max-w-5xl mx-auto phrase-wrap">
+            <div class="text-center mb-16 gs-fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-widest text-balance">協賛の位置づけ・協賛内容</h2>
+            </div>
+
+            <div class="bg-white text-textMain border border-borderLight shadow-sm rounded-sm p-8 md:p-16 gs-fade-up">
+                <div class="mb-12">
+                    <p class="font-serif text-xl md:text-2xl font-bold mb-8 text-accentDark leading-relaxed">
+                        本企画における協賛は、広告出稿ではありません。
+                    </p>
+                    <ul class="font-sans text-base md:text-lg leading-loose space-y-4 mb-8 font-medium text-textMain">
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">思想・哲学を未来へ紡ぐ</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">次世代教育への直接的な貢献</span></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">経営者自身の歩みを記録文化として残す行為</span></li>
+                    </ul>
+                    <p class="font-serif text-lg md:text-xl font-bold text-textMuted">
+                        という意味を持つ、価値創出型の協賛です。
+                    </p>
+                </div>
+                
+                <div class="border-t border-borderLight pt-12">
+                    <h3 class="font-serif text-2xl font-bold mb-8 text-accentDark">協賛内容</h3>
+                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-4 font-sans text-base md:text-lg font-medium leading-loose text-textMain">
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">冊子への掲載：2ページ構成</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">ポートレート写真1点</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">インタビュー原稿（1,500字前後）</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">編集・ライティング・校正</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">アートディレクション・誌面デザイン</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">掲載誌の進呈（保存用・贈呈用）</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">出身小学校への掲載誌100冊寄贈</span></div>
+                        <div class="flex items-start"><span class="text-accent mr-3 mt-1">■</span><span class="text-textMain">寄贈名義：経営者様ご本人</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14ページ目：協賛金額について -->
+    <section class="py-[15vh] px-[8vw] bg-accentDark text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto phrase-wrap">
+            <div class="text-center mb-16 gs-fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-widest text-balance">協賛金額について</h2>
+            </div>
+
+            <div class="gs-fade-up text-center mb-20">
+                <p class="font-serif text-3xl md:text-5xl font-bold mb-16 tracking-widest text-balance">
+                    協賛金額は、自由です。
+                </p>
+                <p class="font-serif text-xl md:text-3xl leading-loose font-medium opacity-90 text-balance">
+                    <span class="inline-phrase">１冊の値段は、3,000円（消費税別)ですから、</span><br class="md:hidden"><span class="inline-phrase">例えば、</span><br>
+                    <span class="inline-phrase">100冊ですと、300,000円（消費税別)</span><br>
+                    <span class="inline-phrase">200冊ですと、</span><br class="md:hidden">
+                    <span class="inline-phrase">600,000円（消費税別)。</span><br>
+                    <span class="inline-phrase">全くのご自由です。</span>
+                </p>
+            </div>
+
+            <div class="bg-white/10 p-8 md:p-12 rounded-sm border border-white/20 max-w-2xl mx-auto gs-fade-up">
+                <h3 class="font-serif text-xl md:text-2xl font-bold mb-6 text-white border-b border-white/20 pb-4">お支払い方法</h3>
+                <p class="font-sans text-base md:text-lg leading-loose mb-12 text-white/90">
+                    お申込み時、1週間以内のお振り込みの場合は、<br>
+                    <span class="text-2xl md:text-3xl font-bold text-white mt-2 inline-block">10%引き</span>とさせていただきます。
+                </p>
+                
+                <h3 class="font-serif text-xl md:text-2xl font-bold mb-6 text-white border-b border-white/20 pb-4">お振り込み口座</h3>
+                <div class="font-sans text-base md:text-lg leading-loose text-white/50 h-12">
+                    <!-- 口座情報は追記予定のため空欄 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター（15ページ目） -->
     <footer id="contact" class="py-[15vh] px-[8vw] bg-textMain text-center text-white relative">
         <div class="max-w-4xl mx-auto gs-fade-up phrase-wrap">
-            <h2 class="font-serif text-4xl md:text-6xl mb-16 leading-tight font-light text-balance">
-                あなたの哲学を、<br><span class="italic opacity-80">未来の資産に。</span>
+            <h2 class="font-serif text-3xl md:text-5xl mb-16 font-bold tracking-widest text-balance">
+                本企画のお問い合わせ
             </h2>
-            <a href="mailto:shiozawa@actilus.co.jp" class="inline-block border border-white px-12 py-6 rounded-full font-serif text-lg hover:bg-white hover:text-textMain transition-all duration-500 mb-20 font-bold">
-                お問い合わせ・お申し込み
-            </a>
-            <div class="text-xs md:text-sm text-white/50 space-y-4 pt-16 border-t border-white/10 font-sans">
-                <p class="font-bold text-white text-base">NPO法人先端医療をささえる会</p>
-                <p>〒104-0061 東京都中央区銀座6丁目6-1 銀座風月堂ビル5F</p>
-                <p>TEL: 03-3569-6700 ／ 担当：塩澤</p>
-                <p class="opacity-50 mt-12">&copy; NPO法人先端医療をささえる会</p>
+            
+            <div class="text-sm md:text-lg text-white/90 space-y-4 pt-12 border-t border-white/20 font-sans inline-block text-left">
+                <p class="font-bold text-white text-xl md:text-2xl mb-8">NPO法人先端医療をささえる会</p>
+                <p>〒104-0061　東京都中央区銀座6丁目6-1 銀座風月堂ビル5F</p>
+                <p>TEL: 03-3569-6700</p>
+                <p>担当携帯: </p>
+            </div>
+            
+            <div class="mt-24 pt-8 border-t border-white/10">
+                <p class="opacity-50 text-xs md:text-sm">&copy; NPO法人先端医療をささえる会</p>
             </div>
         </div>
     </footer>
@@ -380,7 +603,6 @@
                 stagger: 0.05, 
                 duration: 1, 
                 ease: "power4.out",
-                // アニメーション完了後にdisplay: inlineに戻し、自然な禁則処理を有効にする
                 onComplete: () => {
                     document.querySelectorAll('.hero-title .char').forEach(char => {
                         char.style.display = 'inline';
