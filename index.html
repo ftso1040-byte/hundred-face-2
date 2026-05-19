@@ -3,25 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>百人の顔 | 未来へ贈るメッセージ 100の人生・100の哲学</title>
+    <!-- ▼▼ SEO対策：タイトルに全キーワードを自然に網羅 ▼▼ -->
+    <title>百人の顔 | 林屋克三郎が経営者の人生と哲学を未来へ残すプロジェクト</title>
     
     <!-- ================================================== -->
     <!-- ▼▼ SEO対策コード（Googleにサイトを正確に伝える設定） ▼▼ -->
     <!-- ================================================== -->
     
-    <!-- 潜在顧客を狙うキーワード（経歴、後世、残す、共有）を追加 -->
-    <meta name="description" content="未来へ贈るメッセージ「百人の顔」。経営者としての経歴や人生の哲学を後世に残し、未来の子供たちと共有するための社会的記録ポートレートプロジェクトです。">
+    <!-- ▼▼ SEO対策：descriptionに全キーワードとターゲット層への訴求を網羅 ▼▼ -->
+    <meta name="description" content="未来の子供たちへ贈るメッセージ「百人の顔」。発案者・林屋克三郎が、中小企業経営者の経歴や人生の哲学を直接インタビューし、社会的記録として後世に残し共有するための出版プロジェクトです。">
     
     <link rel="canonical" href="https://hyakuninnokao026.oops.jp/hundred-face/">
-    
+
+    <!-- ▼▼ SEO対策：OGP（SNSやLINEでシェアされた際のカード表示設定）を追加 ▼▼ -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="百人の顔 | 林屋克三郎が経営者の人生と哲学を未来へ残すプロジェクト">
+    <meta property="og:description" content="未来の子供たちへ贈るメッセージ「百人の顔」。経営者の経歴や人生の哲学を社会的記録として後世に残し共有するプロジェクト。">
+    <meta property="og:url" content="https://hyakuninnokao026.oops.jp/hundred-face/">
+    <meta property="og:site_name" content="百人の顔">
+    <meta property="og:image" content="スクリーンショット 2026-03-19 172649.png"> <!-- ※本番環境の絶対パス推奨 -->
+
+    <!-- ▼▼ SEO対策：構造化データ（JSON-LD）を強化し、林屋氏とプロジェクトの関連性をGoogleに明示 ▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "百人の顔",
-      "alternateName": "百人の顔 | 人生と経歴を後世に残す記録プロジェクト",
-      "url": "https://hyakuninnokao026.oops.jp/hundred-face/",
-      "description": "未来へ贈るメッセージ「百人の顔」。経営者としての経歴や人生の哲学を後世に残し、未来の子供たちと共有するための社会的記録ポートレートプロジェクト。"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://hyakuninnokao026.oops.jp/hundred-face/#website",
+          "url": "https://hyakuninnokao026.oops.jp/hundred-face/",
+          "name": "百人の顔",
+          "description": "林屋克三郎が発案する、経営者の人生と哲学を未来へ残す出版プロジェクト。"
+        },
+        {
+          "@type": "Project",
+          "@id": "https://hyakuninnokao026.oops.jp/hundred-face/#project",
+          "name": "百人の顔 プロジェクト",
+          "description": "経営者の人生と哲学を未来の子供たちへ残し、教育に役立てるための社会的記録ポートレートプロジェクト。",
+          "founder": {
+            "@type": "Person",
+            "name": "林屋克三郎",
+            "description": "林屋経営研究所設立者。NPO先端医療をささえる会代表。「百人の顔」企画立案者。"
+          }
+        }
+      ]
     }
     </script>
     
@@ -108,8 +133,8 @@
         .animate-scroll-line { animation: scrollLine 2.5s infinite ease-in-out; }
 
         /* ==========================================================================
-           【極限版】印刷用（プリントアウト）のCSS設定（Webの見た目には影響しません）
-           ========================================================================== */
+            【極限版】印刷用（プリントアウト）のCSS設定（Webの見た目には影響しません）
+            ========================================================================== */
         @media print {
             @page {
                 size: A4;
@@ -204,15 +229,15 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-accentDark selection:text-white">
+<body id="top" class="antialiased selection:bg-accentDark selection:text-white">
 
     <!-- ナビゲーション -->
     <nav class="fixed top-0 left-0 w-full z-50 p-4 md:px-12 md:py-6 flex justify-between items-center bg-base/90 backdrop-blur-md border-b border-borderLight transition-transform duration-300" id="navbar">
-        <div class="flex flex-col">
-            <!-- 隠し文字(sr-only)にターゲットキーワードをすべて盛り込む -->
-            <h1 class="font-serif text-lg md:text-xl tracking-[0.1em] font-semibold text-textMain">百人の顔<span class="sr-only"> | 人生や経歴、哲学を後世に残し共有する記録プロジェクト</span></h1>
+        <a href="#top" class="flex flex-col cursor-pointer">
+            <!-- ▼▼ SEO対策：見た目は変えずに、隠し文字(sr-only)でH1タグに全キーワードを仕込む ▼▼ -->
+            <h1 class="font-serif text-lg md:text-xl tracking-[0.1em] font-semibold text-textMain">百人の顔<span class="sr-only"> | 林屋克三郎が発案する、経営者の人生と哲学を未来の子供たちへ残す出版プロジェクト</span></h1>
             <div class="font-sans text-[9px] md:text-xs tracking-[0.1em] text-textMuted font-bold mt-1 uppercase">Message to the Future</div>
-        </div>
+        </a>
         <a href="#contact" class="bg-accentDark text-white font-sans text-xs md:text-sm font-bold tracking-widest px-6 py-3 rounded-full hover:bg-accent transition-colors duration-300 shadow-sm">
             お問い合わせ
         </a>
@@ -235,8 +260,8 @@
 
             <!-- 百人の顔 表紙画像 -->
             <div class="gs-reveal opacity-0 w-full max-w-[260px] md:max-w-xs lg:max-w-sm relative mt-4">
-                <!-- alt属性にキーワードを追加 -->
-                <img src="スクリーンショット 2026-03-19 172649.png" alt="経営者としての経歴や人生の哲学を後世に残し、次世代と共有する『百人の顔』表紙画像" class="w-full h-auto object-cover shadow-2xl border border-borderLight/50 rounded-sm">
+                <!-- ▼▼ SEO対策：alt属性にキーワードを追加 ▼▼ -->
+                <img src="スクリーンショット 2026-03-19 172649.png" alt="経営者としての経歴や人生の哲学を後世に残し、未来の子供たちと共有するプロジェクト『百人の顔』表紙画像" class="w-full h-auto object-cover shadow-2xl border border-borderLight/50 rounded-sm">
             </div>
         </div>
         
@@ -275,8 +300,7 @@
             
             <!-- 経営者の画像1（このセクション内に含め、高さを節約） -->
             <div class="w-full max-w-[140px] md:max-w-[180px] mx-auto mt-2 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
-                <!-- alt属性にキーワードを追加 -->
-                <img src="スクリーンショット 2026-04-04 162652.png" alt="人生の哲学や経歴を次世代へ語り継ぎ、記録として残す経営者のポートレート" loading="lazy" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                <img src="スクリーンショット 2026-04-04 162652.png" alt="人生の哲学や経歴を未来へ語り継ぐ経営者のポートレート" loading="lazy" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
         </div>
     </section>
@@ -348,7 +372,8 @@
             </h3>
 
             <div class="max-w-2xl mx-auto mt-16 aspect-video bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
-                <img src="Gemini_Generated_Image_6c5d6l6c5d6l6c5d.png" alt="[お茶の画像]" loading="lazy" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                <!-- ▼▼ SEO対策：alt属性にお茶・哲学関連のキーワードを補強 ▼▼ -->
+                <img src="Gemini_Generated_Image_6c5d6l6c5d6l6c5d.png" alt="鎌倉時代から続く日本の精神性や哲学を象徴する茶道のイメージ" loading="lazy" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
         </div>
     </section>
@@ -366,7 +391,6 @@
 
             <div class="w-12 h-[1px] bg-accent/30 mx-auto my-12"></div>
             
-            <!-- リードコピー級（text-fluid-h2）の大きなサイズに変更 -->
             <h2 class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold text-balance mb-8">
                 <span class="inline-phrase">だから、いまこそ、</span><br>
                 <span class="inline-phrase">我が国の教育政策を</span><br>
@@ -399,7 +423,6 @@
                 <span class="inline-phrase">掲載をお願いするものです。</span>
             </p>
 
-            <!-- 画像サイズを少し小さく調整 (max-w-xs -> max-w-[160px] md:max-w-[200px]) -->
             <div class="w-full max-w-[160px] md:max-w-[200px] mx-auto mt-12 aspect-[3/4] bg-white/5 rounded-sm overflow-hidden border border-white/20 relative shadow-2xl hover:-translate-y-1 transition-transform duration-300">
                 <img src="スクリーンショット 2026-04-04 174909.png" alt="『百人の顔』発案者・林屋克三郎のポートレート" loading="lazy" class="w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
             </div>
@@ -442,12 +465,10 @@
     <section class="py-[15vh] px-[8vw] bg-surface text-accentDark relative overflow-hidden border-b border-borderLight">
         <div class="max-w-4xl mx-auto phrase-wrap">
             <div class="gs-fade-up text-center mb-20">
-                <!-- 最初の行をリードコピー級（text-fluid-h2）の大きなサイズに変更 -->
                 <h2 class="font-serif text-fluid-h2 leading-tight md:leading-snug tracking-widest font-bold text-accentDark text-balance mb-8">
                     <span class="inline-phrase">小学生の時、矢内原忠雄の「余の尊敬する人物」を読んで、</span><br>
                     <span class="inline-phrase">新渡戸稲造に発奮。</span>
                 </h2>
-                <!-- 残りの文章は元のサイズで表示 -->
                 <p class="font-serif text-lg md:text-2xl leading-loose tracking-widest font-medium text-textMuted text-balance">
                     <span class="inline-phrase">その経験をもとに、</span><br class="md:hidden">
                     <span class="inline-phrase">「百人の顔」を企画立案する。</span>
@@ -478,7 +499,8 @@
 
             <div class="mt-24 flex flex-col items-center gs-fade-up">
                 <div class="w-full max-w-[200px] md:max-w-[240px] relative group cursor-pointer">
-                    <img src="スクリーンショット 2026-04-04 174747.png" alt="林屋克三郎の著書・経営者の人生と哲学の記録" loading="lazy" class="w-full h-auto object-cover rounded-r-md rounded-l-sm shadow-[15px_15px_25px_rgba(0,0,0,0.4)] border border-borderLight group-hover:-translate-y-2 group-hover:shadow-[15px_25px_30px_rgba(0,0,0,0.5)] transition-all duration-500" style="border-left: 5px solid #1a1a1a;">
+                    <!-- ▼▼ SEO対策：alt属性の補強 ▼▼ -->
+                    <img src="スクリーンショット 2026-04-04 174747.png" alt="林屋克三郎の著書・経営者の人生と哲学の記録となるプロジェクトの関連書籍" loading="lazy" class="w-full h-auto object-cover rounded-r-md rounded-l-sm shadow-[15px_15px_25px_rgba(0,0,0,0.4)] border border-borderLight group-hover:-translate-y-2 group-hover:shadow-[15px_25px_30px_rgba(0,0,0,0.5)] transition-all duration-500" style="border-left: 5px solid #1a1a1a;">
                     <div class="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none rounded-r-md w-6"></div>
                 </div>
             </div>
